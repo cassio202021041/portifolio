@@ -1,17 +1,36 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# ====================================
+# Build e diretórios temporários
+# ====================================
+/dist/
+/tmp/
+/out-tsc/
+/bazel-out/
+/coverage/
+/.angular/cache/
+/.sass-cache/
 
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+# ====================================
+# Node.js
+# ====================================
+/node_modules/
+npm-debug.log*
+yarn-error.log*
 
-# Node
-/node_modules
-npm-debug.log
-yarn-error.log
+# ====================================
+# Arquivos de log
+# ====================================
+/connect.lock
+/libpeerconnection.log
+testem.log
 
-# IDEs and editors
+# ====================================
+# Tipagens e dependências de terceiros
+# ====================================
+/typings/
+
+# ====================================
+# IDEs e editores
+# ====================================
 .idea/
 .project
 .classpath
@@ -20,23 +39,21 @@ yarn-error.log
 .settings/
 *.sublime-workspace
 
+# ====================================
 # Visual Studio Code
+# ====================================
 .vscode/*
+# Exceto arquivos de configuração úteis para o time
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-.history/*
 
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
+# Histórico local de extensões ou plugins
+.history/
 
-# System files
+# ====================================
+# Arquivos do sistema operacional
+# ====================================
 .DS_Store
 Thumbs.db
