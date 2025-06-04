@@ -1,56 +1,99 @@
-<div class="resume-container">
-  <header>
-    <h1>CASSIO MOREIRA DE SOUZA</h1>
+<div class="container resume-container my-4">
+  <header class="text-center mx-auto" style="max-width: 600px; font-family: Arial, sans-serif;">
+    <h1 class="mb-2">CASSIO MOREIRA DE SOUZA</h1>
     <p>Brasileiro, Casado, 37 anos, residência em Sobradinho – DF</p>
-    <p><strong>Telefone:</strong> (61) 99214-6651</p>
-    <p><strong>Email:</strong> <a href="mailto:cassio00710@hotmail.com">cassio00710&#64;hotmail.com</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/cassiodf-moreira-ti" target="_blank">www.linkedin.com/in/cassiodf-moreira-ti</a></p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/cassio202021041" target="_blank">github.com/cassio202021041</a></p>
+    <p>
+      <img src="assets/svg/whatsapp-icon-logo-svgrepo-com.svg" alt="WhatsApp" width="20" class="align-middle me-2" />
+      <a href="https://wa.me/5561992146651" target="_blank" class="text-decoration-none text-reset">
+        (61) 99214-6651
+      </a>
+    </p>
+    <p>
+      <img src="assets/svg/email-1-svgrepo-com.svg" alt="Email" width="20" class="align-middle me-2" />
+      <a href="mailto:cassio00710@hotmail.com" class="text-decoration-none text-reset">
+        cassio00710&#64;hotmail.com
+      </a>
+    </p>
+    <p>
+      <img src="assets/svg/linkedin-svgrepo-com.svg" alt="LinkedIn" width="20" class="align-middle me-2" />
+      <a href="https://www.linkedin.com/in/cassiodf-moreira-ti" target="_blank" class="text-decoration-none text-reset">
+        www.linkedin.com/in/cassiodf-moreira-ti
+      </a>
+    </p>
+    <p>
+      <img src="assets/svg/github-color-svgrepo-com.svg" alt="GitHub" width="20" class="align-middle me-2" />
+      <a href="https://github.com/cassio202021041" target="_blank" class="text-decoration-none text-reset">
+        github.com/cassio202021041
+      </a>
+    </p>
   </header>
 
-  <section class="objective">
+  <!-- Botões para abrir e baixar PDF -->
+  <div class="d-flex gap-3 my-3 justify-content-center">
+    <button class="btn btn-primary" (click)="openPdf()">
+      Abrir Currículo
+    </button>
+    <a class="btn btn-secondary" href="assets/svg/Cassio_Moreira_Dev_Pro.pdf" download="Cassio_Moreira_Dev_Pro.pdf" target="_blank" rel="noopener noreferrer">
+      Baixar Currículo
+    </a>
+  </div>
+
+  <section class="objective mt-4">
     <h2>OBJETIVO</h2>
-<p>
-  Sou formado em Sistemas de Informação e atualmente atuo como Trainee Fullstack, com experiência em desenvolvimento utilizando PHP com o framework Yii e Angular. Trabalho seguindo metodologias ágeis, como o Scrum, e tenho familiaridade com versionamento de código utilizando Git. Além disso, possuo conhecimento em ferramentas de gerenciamento e organização, como Kanban, Jira e Monday.
+    <p>
+      Sou formado em Sistemas de Informação e atualmente atuo como Trainee Fullstack, com experiência em desenvolvimento utilizando PHP com o framework Yii e Angular. Trabalho seguindo metodologias ágeis, como o Scrum, e tenho familiaridade com versionamento de código utilizando Git. Além disso, possuo conhecimento em ferramentas de gerenciamento e organização, como Kanban, Jira e Monday. Durante minha graduação, desenvolvi uma sólida base em conceitos fundamentais, como desenvolvimento de software e gestão de sistemas, o que me capacita a abordar problemas complexos com uma visão técnica bem fundamentada. Sou movido pela paixão por tecnologia e programação, e busco constantemente aprimorar minhas habilidades, explorando novas tecnologias e participando de projetos desafiadores. Meu objetivo é integrar uma equipe dinâmica e colaborativa onde eu possa aplicar meu conhecimento técnico, contribuir para o desenvolvimento de soluções inovadoras e continuar evoluindo como profissional. Com minha motivação, comprometimento e desejo de aprender, acredito que posso ser um membro valioso em projetos de tecnologia e desenvolvimento de software.
+    </p>
+  </section>
 
-  Durante minha graduação, desenvolvi uma sólida base em conceitos fundamentais, como desenvolvimento de software e gestão de sistemas, o que me capacita a abordar problemas complexos com uma visão técnica bem fundamentada. Sou movido pela paixão por tecnologia e programação, e busco constantemente aprimorar minhas habilidades, explorando novas tecnologias e participando de projetos desafiadores.
-
-  Meu objetivo é integrar uma equipe dinâmica e colaborativa onde eu possa aplicar meu conhecimento técnico, contribuir para o desenvolvimento de soluções inovadoras e continuar evoluindo como profissional. Com minha motivação, comprometimento e desejo de aprender, acredito que posso ser um membro valioso em projetos de tecnologia e desenvolvimento de software.</p>  </section>
-
-  <section class="education">
+  <section class="education mt-4">
     <h2>FORMAÇÃO</h2>
     <ul>
       <li>Formado em Sistemas de Informação no ano de 2024</li>
     </ul>
   </section>
 
-  <section class="skills">
+  <section class="skills mt-4">
     <h2>HABILIDADES</h2>
     <ul>
       <li>Desenvolvimento Web Angular (Udemy)</li>
-      <li>Desenvolvimento Java com Spring (Udemy, Loianne Gronner)</li>
+      <li>Desenvolvimento Java com Spring (Udemy, Loianne Gronner, DIO)</li>
       <li>Fundamentos de tecnologia para atendimento ao cliente Desenvolvimento Web (IBM SkillsBuild, Programa Match)</li>
       <li>Versionamento de Código com Git e GitHub (DIO)</li>
+      <li>Curso PHP básico ao avançado (Udemy)</li>
     </ul>
   </section>
 
-  <section class="experience">
+  <section class="experience mt-4">
     <h2>EXPERIÊNCIAS PROFISSIONAIS</h2>
     <h3>Uitec</h3>
-    <h2>Trainee Fullstack</h2>
-    <ul>
-      <li>Desenvolvimento de aplicações web utilizando PHP com o framework Yii e Angular</li>
-      <li>Trabalho seguindo metodologias ágeis, como o Scrum</li>
-      <li>Familiaridade com versionamento de código utilizando Git</li>
-      <li>Conhecimento em ferramentas de gerenciamento e organização, como Kanban, Jira e Monday</li>
-
-    </ul>
+    <div>
+      <h4>Trainee Fullstack</h4>
+      <ul>
+        <li>Desenvolvimento de aplicações web utilizando PHP com o framework Yii e Angular</li>
+        <li>Trabalho seguindo metodologias ágeis, como o Scrum</li>
+        <li>Familiaridade com versionamento de código utilizando Git</li>
+        <li>Conhecimento em ferramentas de gerenciamento e organização, como Kanban, Jira e Monday</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Trainee Scrum Master</h4>
+      <ul>
+        <li>Facilito as cerimônias ágeis do time, como Daily, Planning, Review e Retrospective, sempre focando em tornar as reuniões objetivas e alinhadas com os objetivos do time.</li>
+        <li>Atuo ativamente na remoção de impedimentos que impactam o andamento das sprints, ajudando a manter o fluxo de trabalho fluindo e buscando soluções junto a outras áreas quando necessário.</li>
+        <li>Dou suporte constante à equipe, incentivando a auto-organização e a colaboração. Compartilho conhecimentos sobre métodos ágeis e boas práticas para o time evoluir continuamente.</li>
+        <li>Trabalho em parceria com o Product Owner para garantir que o backlog esteja bem estruturado e priorizado, contribuindo para que as entregas estejam alinhadas às necessidades do negócio.</li>
+        <li>Promovo um ambiente de trabalho colaborativo e respeitoso, onde todos os membros da equipe se sintam à vontade para compartilhar ideias e feedbacks.</li>
+      </ul>
+    </div>
   </section>
 
-  <section class="profile">
+  <section class="profile mt-4">
     <h2>PERFIL PROFISSIONAL</h2>
-    <p>Durante minha graduação, desenvolvi uma sólida base em conceitos fundamentais, como desenvolvimento de software e gestão de sistemas, o que me capacita a abordar problemas complexos com uma visão técnica bem fundamentada. Sou movido pela paixão por tecnologia e programação, e busco constantemente aprimorar minhas habilidades, explorando novas tecnologias e participando de projetos desafiadores.</p>
-    <p>Meu objetivo é integrar uma equipe dinâmica e colaborativa onde eu possa aplicar meu conhecimento técnico, contribuir para o desenvolvimento de soluções inovadoras e continuar evoluindo como profissional. Com minha motivação, comprometimento e desejo de aprender, acredito que posso ser um membro valioso em projetos de tecnologia e desenvolvimento de software.</p>
+    <p>
+      Durante minha graduação, desenvolvi uma sólida base em conceitos fundamentais, como desenvolvimento de software e gestão de sistemas, o que me capacita a abordar problemas complexos com uma visão técnica bem fundamentada. Sou movido pela paixão por tecnologia e programação, e busco constantemente aprimorar minhas habilidades, explorando novas tecnologias e participando de projetos desafiadores.
+    </p>
+    <p>
+      Meu objetivo é integrar uma equipe dinâmica e colaborativa onde eu possa aplicar meu conhecimento técnico, contribuir para o desenvolvimento de soluções inovadoras e continuar evoluindo como profissional. Com minha motivação, comprometimento e desejo de aprender, acredito que posso ser um membro valioso em projetos de tecnologia e desenvolvimento de software.
+    </p>
   </section>
 </div>
-

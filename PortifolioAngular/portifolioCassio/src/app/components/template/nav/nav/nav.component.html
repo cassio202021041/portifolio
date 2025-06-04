@@ -1,35 +1,45 @@
-<mat-sidenav-container class="container d-flex w-100 vh-100 position-absolute">
-  <mat-sidenav class="sidenav" mode="side" opened
- fixedInViewport="true" fixedTopGap="64">
- <img class="logo" src="../../../../../assets/logo.png" alt="logo">
-      <mat-nav-list class="nav-list" >
-          <a mat-list-item  routerLink="/skills">
-              <i class="material-icons">
-                  home
-              </i>
-              Skills
-          </a>
-          <a mat-list-item routerLink="/alunos">
-              <i class="material-icons">
-                  groups
-              </i>Cursos
-         </a>
+<mat-sidenav-container
+  class="container-fluid d-flex w-100 vh-100 position-relative p-0"
+>
+  <mat-sidenav
+    class="sidenav"
+    mode="side"
+    opened
+    fixedInViewport="true"
+    fixedTopGap="64"
+    style="width: 250px"
+  >
+    <img
+      class="logo img-fluid my-3 mx-auto d-block"
+      src="../../../../../assets/logo.png"
+      alt="logo"
+      style="max-width: 150px"
+    />
+    <mat-nav-list class="nav-list px-2">
+      <a mat-list-item routerLink="/skills" class="d-flex align-items-center">
+        <i class="material-icons me-2">work</i>
+        Skills
+      </a>
+      <a mat-list-item routerLink="/habilidades" class="d-flex align-items-center">
+        <i class="material-icons me-2">school</i>
+        Habilidades
+      </a>
+      <a
+        mat-list-item
+        routerLink="/curriculo"
+        class="d-flex align-items-center"
+      >
+        <i class="material-icons me-2">picture_as_pdf</i>
+        Curriculo
+      </a>
+      <a mat-list-item routerLink="/" class="d-flex align-items-center">
+        <i class="material-icons me-2">groups</i>
+        About
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
 
-         <a mat-list-item routerLink="/curriculo">
-          <i class="material-icons">
-              lock
-          </i>Curriculo
-     </a>
-     <a mat-list-item routerLink="/">
-      <i class="material-icons">
-          groups
-      </i>Inicio
- </a>
-
-
-           </mat-nav-list>
-      </mat-sidenav>
-      <mat-sidenav-content class="content">
-         <router-outlet></router-outlet>
-      </mat-sidenav-content>
+  <mat-sidenav-content class="content flex-grow-1 p-3" style="overflow-y: auto">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
 </mat-sidenav-container>

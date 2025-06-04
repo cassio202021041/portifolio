@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeaderService } from '../../../components/template/header/header/header.service';
+import { OnInit } from '@angular/core';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { HeaderService } from '../../../components/template/header/header/header
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private headerService: HeaderService) {
+  constructor(headerService: HeaderService) {
     headerService.headerData = {
       title: 'Início',
       icon: 'home',
@@ -18,6 +19,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
+  openPdf() {
+  window.open('assets/svg/Cassio_Moreira_Dev_Pro.pdf', '_blank');
+}
 
 }

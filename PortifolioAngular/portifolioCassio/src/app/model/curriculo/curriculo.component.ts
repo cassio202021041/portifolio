@@ -7,7 +7,14 @@ import { Component } from '@angular/core';
 })
 export class CurriculoComponent {
 
-  
+  // Caminho para o PDF na pasta assets
+  pdfPath: string = 'assets/svg/Cassio_Moreira_Dev_Pro.pdf';
+
+  openPdf() {
+    window.open(this.pdfPath, '_blank');
+  }
+
+
 }
 
 
