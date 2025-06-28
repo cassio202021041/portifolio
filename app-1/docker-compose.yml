@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql_portifolio
+    environment:
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: db_portifolio
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 
+    ports:
+      - "3306:3306"   # expõe a porta 3306 do container para o host
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
