@@ -1,0 +1,22 @@
+<div *ngIf="curriculo">
+  <h2>Objetivo</h2>
+  <p>{{ curriculo.objetivo }}</p>
+
+  <h2>Formação</h2>
+  <p>{{ curriculo.formacao }}</p>
+
+  <h2>Habilidades</h2>
+  <p>{{ curriculo.habilidades }}</p>
+
+  <h2>Experiências Profissionais</h2>
+  <p>{{ curriculo.experiencias_profissionais }}</p>
+
+  <h2>Perfil Profissional</h2>
+  <p>{{ curriculo.perfil_profissional }}</p>
+
+  <h4><i>Criado em:</i> {{ curriculo.created_at | date:'short' }}</h4>
+</div>
+
+<div *ngIf="!curriculo">
+  <p>Carregando currículo...</p>
+</div>
