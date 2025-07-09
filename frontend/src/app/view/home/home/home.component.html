@@ -1,18 +1,22 @@
-<div class="container text-center my-5">
-  <img src="assets/logo.png" alt="Cassio Moreira" class="rounded-circle mb-3" width="150" height="150" />
-  <h1 class="mb-2">Cassio Moreira</h1>
-  <h3 class="text-primary mb-3">Desenvolvedor Fullstack Java & Angular</h3>
-  <p class="lead mb-4">
-    Transformo ideias em soluções escaláveis com Java, Spring Boot, Angular e metodologias ágeis.
+<div class="container py-5 d-flex flex-column align-items-center justify-content-center min-vh-100">
+  <img
+    src="assets/logo.png"
+    alt="Cassio Moreira"
+    class="rounded-circle mb-3"
+    style="width: 120px; height: 120px; object-fit: cover;"
+    srcset="assets/logo.png 1x, assets/logo@2x.png 2x"
+  />
+
+  <h1 class="mb-2 text-center fw-bold display-6 display-md-4">Cassio Moreira</h1>
+  <h3 class="text-primary mb-3 text-center fs-5 fs-md-3">
+    Desenvolvedor Fullstack Java & Angular
+  </h3>
+  <p class="lead mb-4 px-2 text-center">
+    Transformo ideias em soluções escaláveis com Java, Spring Boot,PHP, Angular e metodologias ágeis.
   </p>
-  <div class="d-flex justify-content-center gap-3 mb-4">
-    <button class="btn btn-primary" (click)="openPdf()">Ver Currículo</button>
-    <a href="/projetos" class="btn btn-outline-primary">Ver Projetos</a>
-  </div>
-  <div class="technologies mb-4">
-<img src="assets/svg/java.svg" alt="Java" width="40" class="mx-2 text-black" />
-    <img src="assets/svg/spring.svg" alt="Spring" width="40" class="mx-2" />
-    <img src="assets/svg/angular.svg" alt="Angular" width="40" class="mx-2" />
-    <img src="assets/svg/git.svg" alt="Git" width="40" class="mx-2" />
+
+  <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 w-100" style="max-width: 400px;">
+    <button class="btn btn-primary w-100 w-sm-auto" (click)="openPdf()">Ver Currículo</button>
+    <a routerLink="/projetos" class="btn btn-outline-primary w-100 w-sm-auto">Ver Projetos</a>
   </div>
 </div>

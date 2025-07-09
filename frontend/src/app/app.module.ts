@@ -24,6 +24,8 @@ import { CursosComponent } from './model/cursos/cursos.component';
 import { CurriculoComponent } from './model/curriculo/curriculo.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import { ProjetosComponent } from './model/projetos/projetos.component';
+import { CurriculoFormComponent } from './model/curriculo-form/curriculo-form.component';
 
 
 
@@ -48,6 +50,8 @@ import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
     RedesComponent,
     CursosComponent,
     CurriculoComponent,
+    ProjetosComponent,
+    CurriculoFormComponent,
 
   ],
   imports: [
