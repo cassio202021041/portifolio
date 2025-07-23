@@ -69,8 +69,8 @@ import { CurriculoFormComponent } from './model/curriculo-form/curriculo-form.co
       MatCardModule,
       MatSidenavModule,
       MatListModule,
-      ReactiveFormsModule,
-      PdfViewerModule
+      PdfViewerModule,
+
     ],
 
   providers: [{

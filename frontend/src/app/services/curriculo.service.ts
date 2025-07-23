@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CurriculoService {
 
-  private apiUrl = `${environment.apiBaseUrl}curriculo/listar`;
+  private apiUrl = `${environment.apiBaseUrl}/curriculos`;
 
   constructor(private http: HttpClient) { }
 
@@ -31,9 +31,9 @@ export class CurriculoService {
   }
 
   // PUT /curriculo/atualizar/{id}
-  update(id: number, data: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/atualizar/${id}`, data);
-  }
+ update(id: number, data: any): Observable<any> {
+  return this.http.put<any>(`${this.apiUrl}/${id}`, data);
+}
 
   // DELETE /curriculo/deletar/{id}
   delete(id: number): Observable<any> {

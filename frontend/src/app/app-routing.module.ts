@@ -4,10 +4,12 @@ import { HomeComponent } from "./view/home/home/home.component";
 import { CurriculoComponent } from "./model/curriculo/curriculo.component";
 import { RedesComponent } from "./model/redes/redes.component";
 import { CursosComponent } from "./model/cursos/cursos.component";
+import { ProjetosComponent } from "./model/projetos/projetos.component";
+import { CurriculoFormComponent } from "./model/curriculo-form/curriculo-form.component";
 
 
 const routes: Routes = [
-  {
+ {
     path: "",
     component: HomeComponent
   },
@@ -20,10 +22,23 @@ const routes: Routes = [
     component: RedesComponent
   },
   {
-    path:"habilidades",
+    path: "habilidades",
     component: CursosComponent
   },
+  {
+    path: "projetos",
+    component: ProjetosComponent
+  },
+  {
+    path: "formulario",
+    component: CurriculoFormComponent
 
+  },
+  {
+    path: "**",
+    redirectTo: "",
+    pathMatch: "full"
+  }
 
 ];
 

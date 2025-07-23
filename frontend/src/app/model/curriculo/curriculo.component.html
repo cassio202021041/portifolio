@@ -1,22 +1,59 @@
-<div *ngIf="curriculo">
-  <h2>Objetivo</h2>
-  <p>{{ curriculo.objetivo }}</p>
+<div class="container mt-4">
+  <div class="row">
+    <!-- Formulário de edição -->
+    <div class="col-md-6">
+      <form *ngIf="curriculoForm" [formGroup]="curriculoForm" (ngSubmit)="salvar()">
+        <h4 class="mb-3">Editar Currículo</h4>
 
-  <h2>Formação</h2>
-  <p>{{ curriculo.formacao }}</p>
+        <div class="mb-3">
+          <label for="objetivo" class="form-label">Objetivo</label>
+          <textarea id="objetivo" class="form-control" formControlName="objetivo" rows="2"></textarea>
+        </div>
 
-  <h2>Habilidades</h2>
-  <p>{{ curriculo.habilidades }}</p>
+        <div class="mb-3">
+          <label for="formacao" class="form-label">Formação</label>
+          <textarea id="formacao" class="form-control" formControlName="formacao" rows="2"></textarea>
+        </div>
 
-  <h2>Experiências Profissionais</h2>
-  <p>{{ curriculo.experiencias_profissionais }}</p>
+        <div class="mb-3">
+          <label for="habilidades" class="form-label">Habilidades</label>
+          <textarea id="habilidades" class="form-control" formControlName="habilidades" rows="2"></textarea>
+        </div>
 
-  <h2>Perfil Profissional</h2>
-  <p>{{ curriculo.perfil_profissional }}</p>
+        <div class="mb-3">
+          <label for="experienciasProfissionais" class="form-label">Experiências Profissionais</label>
+          <textarea id="experienciasProfissionais" class="form-control" formControlName="experienciasProfissionais" rows="3"></textarea>
+        </div>
 
-  <h4><i>Criado em:</i> {{ curriculo.created_at | date:'short' }}</h4>
+        <div class="mb-3">
+          <label for="perfilProfissional" class="form-label">Perfil Profissional</label>
+          <textarea id="perfilProfissional" class="form-control" formControlName="perfilProfissional" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Criado em:</label>
+          <input class="form-control" [value]="curriculoForm.value.created_at | date:'short'" readonly />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+    </div>
+
+    <!-- Visualização ao lado -->
+    <div class="col-md-6">
+      <h4 class="mb-3">Pré-visualização</h4>
+      <ul class="list-group">
+        <li class="list-group-item"><strong>Objetivo:</strong> {{ curriculoForm.value.objetivo }}</li>
+        <li class="list-group-item"><strong>Formação:</strong> {{ curriculoForm.value.formacao }}</li>
+        <li class="list-group-item"><strong>Habilidades:</strong> {{ curriculoForm.value.habilidades }}</li>
+        <li class="list-group-item"><strong>Experiências Profissionais:</strong> {{ curriculoForm.value.experienciasProfissionais }}</li>
+        <li class="list-group-item"><strong>Perfil Profissional:</strong> {{ curriculoForm.value.perfilProfissional }}</li>
+        <li class="list-group-item"><strong>Criado em:</strong> {{ curriculoForm.value.created_at | date:'short' }}</li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<div *ngIf="!curriculo">
+<div *ngIf="!curriculoForm">
   <p>Carregando currículo...</p>
 </div>
