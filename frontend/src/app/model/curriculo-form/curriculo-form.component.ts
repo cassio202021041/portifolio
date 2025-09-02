@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-curriculo-form',
   templateUrl: './curriculo-form.component.html',
-  styleUrls: ['./curriculo-form.component.scss']
+  // styleUrls: ['./curriculo-form.component.scss']
 })
 export class CurriculoFormComponent implements OnInit {
   curriculoForm!: FormGroup;
