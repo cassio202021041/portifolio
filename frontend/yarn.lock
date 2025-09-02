@@ -5840,7 +5840,7 @@ pkg-dir@^7.0.0:
   dependencies:
     find-up "^6.3.0"
 
-"portifolio-cassio@file:":
+"portifolio-cassio@file:.":
   version "0.0.0"
   resolved "file:"
   dependencies:
@@ -5856,7 +5856,7 @@ pkg-dir@^7.0.0:
     "@angular/router" "^17.3.0"
     bootstrap "^5.3.6"
     ng2-pdf-viewer "^10.2.2"
-    portifolio-cassio "file:"
+    portifolio-cassio "file:."
     rxjs "~7.8.0"
     zone.js "~0.14.3"
 

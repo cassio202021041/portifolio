@@ -1,5 +1,5 @@
 <div
-  class="container-fluid d-flex w-100 vh-100 position-relative p-0"
+  class="container-fluid d-flex w-100 vh-100 position-relative p-0 border_color=primary"
 >
   <mat-sidenav
     class="sidenav"
@@ -11,7 +11,7 @@
   >
     <img
       class="logo img-fluid my-3 mx-auto d-block"
-      src="../../../../../assets/logo.png"
+      src="../../../../../assets/photos/cassio.jpg"
       alt="logo"
       style="max-width: 150px"
     />
@@ -36,10 +36,16 @@
         <i class="material-icons me-2">groups</i>
         About
       </a>
+      <a mat-list-item routerLink="/projetos" class="d-flex align-items-center">
+        <i class="material-icons me-2">work</i>
+        Projetos
+      </a>
+       <a mat-list-item routerLink="/formulario" class="d-flex align-items-center">
+        <i class="material-icons me-2">developer_mode</i>
+        Formulario
+      </a>
     </mat-nav-list>
   </mat-sidenav>
 
-  <!-- <mat-sidenav-content class="content flex-grow-1 p-3" style="overflow-y: auto"> -->
     <router-outlet ></router-outlet>
-  <!-- </mat-sidenav-content> -->
 </div>
