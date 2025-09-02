@@ -12,31 +12,32 @@ export class CurriculoService {
 
   constructor(private http: HttpClient) { }
 
-  getCurriculo(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
-  }
-   // GET /curriculo/listar
+  // GET /curriculos
   getAll(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/listar`);
+    return this.http.get<any[]>(this.apiUrl);
   }
 
-  // GET /curriculo/{id}
+  // GET /curriculos/{id}
   getById(id: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
-  // POST /curriculo/criar
+  // POST /curriculos
   create(data: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/criar`, data);
+    return this.http.post<any>(this.apiUrl, data);
   }
 
-  // PUT /curriculo/atualizar/{id}
- update(id: number, data: any): Observable<any> {
-  return this.http.put<any>(`${this.apiUrl}/${id}`, data);
+  // PUT /curriculos/{id}
+  update(id: number, data: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}`, data);
+  }
+
+  // DELETE /curriculos/{id}
+  delete(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/${id}`);
+  }
+getCurriculo(): Observable<any[]> {
+  return this.getAll(); // Ou ajuste para buscar o que precisa
 }
 
-  // DELETE /curriculo/deletar/{id}
-  delete(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/deletar/${id}`);
-  }
 }

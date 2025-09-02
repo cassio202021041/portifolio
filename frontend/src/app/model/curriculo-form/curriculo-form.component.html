@@ -1,35 +1,50 @@
-<div class="curriculo p-3 bg-light rounded shadow-sm">
-  <form [formGroup]="curriculoForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label>Objetivo</label>
-      <input formControlName="objetivo" class="form-control" />
+<div class="row">
+  <!-- Formulário -->
+  <div class="col-md-6">
+    <div class="curriculo p-3 bg-light rounded shadow-sm">
+      <form [formGroup]="curriculoForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Nome: </label>
+          <input formControlName="nome" class="form-control" [class.is-invalid]="isInvalid('nome')" />
+          <div *ngIf="isInvalid('nome')" class="invalid-feedback">Nome obrigatório.</div>
+        </div>
+        <div class="form-group">
+          <label>Email:</label>
+          <input formControlName="email" class="form-control" [class.is-invalid]="isInvalid('email')" />
+          <div *ngIf="isInvalid('email')" class="invalid-feedback">E-mail válido obrigatório.</div>
+        </div>
+        <div class="form-group">
+          <label>Telefone:</label>
+          <input formControlName="telefone" class="form-control" [class.is-invalid]="isInvalid('telefone')" />
+          <div *ngIf="isInvalid('telefone')" class="invalid-feedback">Telefone obrigatório.</div>
+        </div>
+        <div class="form-group">
+          <label>Linkedin:</label>
+          <input formControlName="linkedin" class="form-control" [class.is-invalid]="isInvalid('linkedin')" />
+          <div *ngIf="isInvalid('linkedin')" class="invalid-feedback">Linkedin obrigatório.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="button" class="btn btn-secondary ml-2" (click)="resetForm()">Limpar</button>
+      </form>
     </div>
+  </div>
 
-    <div class="form-group">
-      <label>Formação</label>
-      <input formControlName="formacao" class="form-control" />
+  <!-- Lista ao lado -->
+  <div class="col-md-6">
+    <div class="lista-curriculos p-3 bg-white rounded shadow-sm">
+      <h5>Formulários</h5>
+      <ul class="list-group">
+        <li *ngFor="let f of formularios" class="list-group-item d-flex justify-content-between align-items-center">
+          <div>
+            <b>{{ f.nome }}</b><br>
+            <small>{{ f.email }}</small>
+          </div>
+          <div>
+            <button class="btn btn-sm btn-warning mr-2" (click)="editar(f)">Alterar</button>
+            <button class="btn btn-sm btn-danger" (click)="remover(f.id)">Remover</button>
+          </div>
+        </li>
+      </ul>
     </div>
-
-    <div class="form-group">
-      <label>Habilidades</label>
-      <input formControlName="habilidades" class="form-control" />
-    </div>
-
-    <div class="form-group">
-      <label>Experiências Profissionais</label>
-      <input formControlName="experiencias_profissionais" class="form-control" />
-    </div>
-
-    <div class="form-group">
-      <label>Perfil Profissional</label>
-      <input formControlName="perfil_profissional" class="form-control" />
-    </div>
-
-    <div class="form-group pb-3">
-      <label>Criado em</label>
-      <input formControlName="created_at" class="form-control" type="date" />
-    </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+  </div>
 </div>

@@ -1,80 +1,39 @@
-<div class="container mt-4">
+<div class="container mt-4" *ngIf="curriculo">
   <div class="row justify-content-center">
     <div class="col-md-10">
-      <h2 class="mb-4">Currículo - Cássio Moreira de Souza</h2>
-
-      <p><strong>Localização:</strong> Sobradinho - DF</p>
-      <p><strong>Telefone:</strong> (61) 99214-6651</p>
-      <p><strong>Email:</strong> cassiodevpro&#64;gmail.com</p>
-      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/cassiodf-moreira-ti" target="_blank">cassiodf-moreira-ti</a></p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/cassio202021041" target="_blank">cassio202021041</a></p>
-      <p><strong>Disponibilidade:</strong> Remoto, híbrido ou presencial em Brasília - DF</p>
-
+      <h2 class="mb-4">Currículo - {{ curriculo.nome }}</h2>
+      <p><strong>Localização:</strong> {{ curriculo.localizacao }}</p>
+      <p><strong>Telefone:</strong> {{ curriculo.telefone }}</p>
+      <p><strong>Email:</strong> {{ curriculo.email }}</p>
+      <p><strong>LinkedIn:</strong>
+        <a [href]="curriculo.linkedin" target="_blank">{{ curriculo.linkedinLabel }}</a>
+      </p>
+      <p><strong>GitHub:</strong>
+        <a [href]="curriculo.github" target="_blank">{{ curriculo.githubLabel }}</a>
+      </p>
+      <p><strong>Disponibilidade:</strong> {{ curriculo.disponibilidade }}</p>
       <hr />
 
       <h4>1. Objetivo Profissional</h4>
-      <p>
-        Desenvolvedor Frontend Junior comprometido em contribuir para times ágeis com interfaces modernas, responsivas e escaláveis.
-        Experiência prática com Angular, React, Next.js, consumo de APIs REST e versionamento com Git.
-        Busco desafios técnicos que promovam crescimento contínuo na área de desenvolvimento web.
-      </p>
+      <p>{{ curriculo.objetivo }}</p>
 
       <h4>2. Experiência Profissional</h4>
-      <p><strong>Desenvolvedor Frontend | UITEC | Brasília - DF</strong><br />
-      <em>Set/2024 – Atual</em></p>
-      <ul>
-        <li>Desenvolvi interfaces web responsivas utilizando Angular 15+ e React, com React Hooks e Context API.</li>
-        <li>Integração com APIs REST utilizando Axios e HttpClient.</li>
-        <li>Estilização com Tailwind CSS, Angular Material e Bootstrap.</li>
-        <li>Participação em sprints ágeis com Scrum e Kanban, utilizando Jira e Monday.</li>
-        <li>Gerenciamento de código com Git, projetos no GitHub e Vercel.</li>
-      </ul>
+      <ng-container *ngFor="let exp of curriculo.experiencia">
+        <p>
+          <strong>{{ exp.cargo }} | {{ exp.empresa }} | {{ exp.local }}</strong><br />
+          <em>{{ exp.periodo }}</em>
+        </p>
+        <ul>
+          <li *ngFor="let atividade of exp.atividades">{{ atividade }}</li>
+        </ul>
+      </ng-container>
 
-      <h4>3. Formação Acadêmica</h4>
-      <p>Bacharelado em Sistemas de Informação | Projeção | Brasília - DF<br />
-      <em>2020 – 2024</em></p>
-
-      <h4>4. Cursos Complementares</h4>
-      <ul>
-        <li>Angular Web Development | Udemy (2024)</li>
-        <li>Angular Avançado com Projeto Real | Udemy (2025)</li>
-        <li>React + Next.js | Udemy (Em andamento)</li>
-        <li>Java com Spring Boot | Udemy (2024)</li>
-        <li>Banco de Dados Relacional com SQL | Udemy (2025)</li>
-        <li>Versionamento com Git e GitHub | DIO (2024)</li>
-        <li>Fundamentos de Atendimento e Tecnologia | IBM SkillsBuild (2024)</li>
-      </ul>
-
-      <h4>5. Projetos Relevantes</h4>
-      <p><strong>Sistema de Integração (TCC)</strong></p>
-      <ul>
-        <li>Aplicação de gerenciamento de usuários com Angular 15 + Spring Boot + MySQL.</li>
-        <li>Funcionalidades de CRUD, autenticação e dashboard interativo.</li>
-        <li>Estilização com Angular Material.</li>
-      </ul>
-
-      <h4>6. Habilidades Técnicas</h4>
-      <ul>
-        <li><strong>Frameworks:</strong> Angular, React, Next.js</li>
-        <li><strong>Linguagens:</strong> JavaScript, TypeScript, PHP, Java, SQL</li>
-        <li><strong>UI/UX:</strong> Tailwind CSS, Angular Material, CSS Modules, Bootstrap</li>
-        <li><strong>APIs:</strong> REST, Axios, Fetch, HttpClient</li>
-        <li><strong>Ferramentas:</strong> Git, GitHub, Jira, Monday, Vercel</li>
-        <li><strong>Banco de Dados:</strong> PostgreSQL, MySQL, SQLite</li>
-        <li><strong>Metodologias:</strong> Scrum, Kanban</li>
-      </ul>
-
-      <h4>7. Habilidades Comportamentais</h4>
-      <ul>
-        <li><strong>Trabalho em Equipe:</strong> Colaboração em projetos ágeis e revisões de código.</li>
-        <li><strong>Resolução de Problemas:</strong> Solução de bugs em interfaces e APIs.</li>
-        <li><strong>Comunicação:</strong> Clareza na interação com equipes técnicas e não técnicas.</li>
-        <li><strong>Adaptabilidade:</strong> Aprendizado rápido de novas tecnologias.</li>
-        <li><strong>Gestão de Tempo:</strong> Priorização de tarefas com prazos definidos.</li>
-      </ul>
-
-      <h4>8. Idiomas</h4>
-      <p>Inglês: Intermediário (B1) – Leitura técnica, conversação básica.</p>
+      <!-- Continue as seções usando *ngFor para arrays, e interpolação para campos simples -->
     </div>
   </div>
+</div>
+
+<!-- Opcional: Loading ou mensagem de erro -->
+<div *ngIf="!curriculo">
+  <p>Carregando currículo...</p>
 </div>

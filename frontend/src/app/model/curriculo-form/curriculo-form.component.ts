@@ -1,31 +1,72 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormService } from '../../services/form.service';
 
 @Component({
   selector: 'app-curriculo-form',
   templateUrl: './curriculo-form.component.html',
-  // styleUrls: ['./curriculo-form.component.scss']
 })
 export class CurriculoFormComponent implements OnInit {
   curriculoForm!: FormGroup;
+  formularios: any[] = [];
+  editandoId: number | null = null;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private formService: FormService
+  ) {}
 
   ngOnInit(): void {
     this.curriculoForm = this.fb.group({
-      objetivo: [''],
-      formacao: [''],
-      habilidades: [''],
-      experiencias_profissionais: [''],
-      perfil_profissional: [''],
-      created_at: [''],
+      nome: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      telefone: ['', [Validators.required]],
+      linkedin: ['', [Validators.required]]
     });
+    this.carregarFormularios();
+  }
+
+  carregarFormularios() {
+    this.formService.getAll().subscribe(data => this.formularios = data);
   }
 
   onSubmit(): void {
     if (this.curriculoForm.valid) {
-      console.log('Dados do formulário:', this.curriculoForm.value);
-      // Aqui pode ir o código para envio à API
+      if (this.editandoId) {
+        this.formService.update(this.editandoId, this.curriculoForm.value)
+          .subscribe(() => {
+            this.carregarFormularios();
+            this.resetForm();
+          });
+      } else {
+        this.formService.create(this.curriculoForm.value)
+          .subscribe(() => {
+            this.carregarFormularios();
+            this.resetForm();
+          });
+      }
+    } else {
+      this.curriculoForm.markAllAsTouched();
     }
+  }
+
+  editar(formulario: any) {
+    this.curriculoForm.patchValue(formulario);
+    this.editandoId = formulario.id;
+  }
+
+  remover(id: number) {
+    if (confirm('Tem certeza que deseja remover?')) {
+      this.formService.delete(id).subscribe(() => this.carregarFormularios());
+    }
+  }
+
+  resetForm(): void {
+    this.formService.resetForm(this.curriculoForm);
+    this.editandoId = null;
+  }
+
+  isInvalid(field: string): boolean {
+    return this.formService.isFieldInvalid(this.curriculoForm, field);
   }
 }
