@@ -5,28 +5,28 @@
       <p><strong>Localização:</strong> {{ curriculo.localizacao }}</p>
       <p><strong>Telefone:</strong> {{ curriculo.telefone }}</p>
       <p><strong>Email:</strong> {{ curriculo.email }}</p>
-      <p><strong>LinkedIn:</strong>
-        <a [href]="curriculo.linkedin" target="_blank">{{ curriculo.linkedinLabel }}</a>
+      <p>
+        <strong>LinkedIn:</strong>
+        <a [href]="curriculo.linkedin" target="_blank">{{
+          curriculo.linkedinLabel
+        }}</a>
       </p>
-      <p><strong>GitHub:</strong>
-        <a [href]="curriculo.github" target="_blank">{{ curriculo.githubLabel }}</a>
+      <p>
+        <strong>GitHub:</strong>
+        <a [href]="curriculo.github" target="_blank">{{
+          curriculo.githubLabel
+        }}</a>
       </p>
-      <p><strong>Disponibilidade:</strong> {{ curriculo.disponibilidade }}</p>
+      <p><strong>Disponibilidade:</strong> {{ curriculo.Disponibilidade }}</p>
       <hr />
 
       <h4>1. Objetivo Profissional</h4>
       <p>{{ curriculo.objetivo }}</p>
 
       <h4>2. Experiência Profissional</h4>
-      <ng-container *ngFor="let exp of curriculo.experiencia">
-        <p>
-          <strong>{{ exp.cargo }} | {{ exp.empresa }} | {{ exp.local }}</strong><br />
-          <em>{{ exp.periodo }}</em>
-        </p>
-        <ul>
-          <li *ngFor="let atividade of exp.atividades">{{ atividade }}</li>
-        </ul>
-      </ng-container>
+      <p>{{ curriculo.experienciasProfissionais }}</p>
+      <h4>3. Formação Acadêmica</h4>
+      <p>{{ curriculo.formacao }}</p>
 
       <!-- Continue as seções usando *ngFor para arrays, e interpolação para campos simples -->
     </div>

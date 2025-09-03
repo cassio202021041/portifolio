@@ -1,50 +1,49 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
-import { HomeComponent } from "./view/home/home/home.component";
-import { CurriculoComponent } from "./model/curriculo/curriculo.component";
-import { RedesComponent } from "./model/redes/redes.component";
-import { CursosComponent } from "./model/cursos/cursos.component";
-import { ProjetosComponent } from "./model/projetos/projetos.component";
-import { CurriculoFormComponent } from "./model/curriculo-form/curriculo-form.component";
-
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './view/home/home/home.component';
+import { CurriculoComponent } from './model/curriculo/curriculo.component';
+import { RedesComponent } from './model/redes/redes.component';
+import { CursosComponent } from './model/cursos/cursos.component';
+import { ProjetosComponent } from './model/projetos/projetos.component';
+import { CurriculoFormComponent } from './model/curriculo-form/curriculo-form.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
- {
-    path: "",
-    component: HomeComponent
+  {
+    path: '',
+    component: HomeComponent,
   },
   {
-    path: "curriculo",
-    component: CurriculoComponent
+    path: 'curriculo',
+    component: CurriculoComponent,
   },
   {
-    path: "skills",
-    component: RedesComponent
+    path: 'skills',
+    component: RedesComponent,
   },
   {
-    path: "habilidades",
-    component: CursosComponent
+    path: 'habilidades',
+    component: CursosComponent,
   },
   {
-    path: "projetos",
-    component: ProjetosComponent
+    path: 'projetos',
+    component: ProjetosComponent,
   },
   {
-    path: "formulario",
-    component: CurriculoFormComponent
-
+    path: 'formulario',
+    component: CurriculoFormComponent,
   },
+  { path: 'login', component: LoginComponent },
+  // { path: 'dashboard', component: DashboardComponent },
   {
-    path: "**",
-    redirectTo: "",
-    pathMatch: "full"
-  }
-
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full',
+  },
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
